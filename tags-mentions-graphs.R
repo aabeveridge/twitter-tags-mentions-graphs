@@ -3,9 +3,11 @@ library(readtext)
 library(ndjson)
 library(tidyverse)
 
+#####################################################################################################
 # workflow for converting Twitter json, reducing dataset, renaming variables, and saving as CSV file
-#
-# tweets.data <- stream_in('uncg1.json') %>%
+#####################################################################################################
+
+# tweets.data <- stream_in('senator-tweets.json') %>%
 #   as_tibble() %>%
 #   select(created_at, text, user.description, user.favourites_count,
 #          user.followers_count, user.friends_count, user.location,
@@ -20,19 +22,19 @@ library(tidyverse)
 #          retweet.mentions = retweeted_status.user.screen_name, url = entities.urls.0.expanded_url,
 #          retweet.url = retweeted_status.user.entities.url.urls.0.expanded_url, total.retweets = retweet_count)
 #
-# write.csv(tweets.data, file="uncg-tweets.csv")
+# write.csv(tweets.data, file="senator-tweets.csv")
 
 #############################################
 # read in CSV and convert to quanteda corpus
 #############################################
 
 # read in csv file of tweets
-tweets.data <- readtext('uncg-tweets.csv', text_field='text')
+tweets.data <- readtext('senator-tweets.csv', text_field='text')
 
 # convert to quanteda corpus structure
 tweets.corpus <- corpus(tweets.data)
 
-# convert to document feature matrix 
+# convert to document feature matrix
 tweet.dfm <- dfm(tweets.corpus, remove_punct = TRUE)
 
 # explore
