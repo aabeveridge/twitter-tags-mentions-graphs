@@ -55,7 +55,7 @@ head(toptag)
 # graph co-occurance of hashtags
 #################################
 
-# construct feature co-occurance matrix
+# construct feature co-occurance matrix of hashtags
 tag.fcm <- fcm(tag.dfm)
 head(tag.fcm)
 
