@@ -1,0 +1,4 @@
+task = twitter-user
+output = mydata.json
+count = 10
+user = nasa,wired

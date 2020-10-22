@@ -1,0 +1,3 @@
+task = twitter-rehydrate
+output = mydata.json
+query = 595302290619260928,595302291349118976
